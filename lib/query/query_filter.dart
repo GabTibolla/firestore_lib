@@ -81,6 +81,19 @@ class QueryFilter {
 
       case CompareEnum.arrayContains:
         return Filter(item.fieldName, arrayContains: item.value);
+      
+      case CompareEnum.isGreaterThan
+        return Filter(item.fieldName, isGreaterThan: item.value);
+
+      case CompareEnum.isLessThan
+        return Filter(item.fieldName, isLessThan: item.value);
+
+      case CompareEnum.isLessThanOrEqualTo
+        return Filter(item.fieldName, isLessThanOrEqualTo: item.value);
+
+      case CompareEnum.isGreaterThanOrEqualTo
+        return Filter(item.fieldName, isGreaterThanOrEqualTo: item.value);
     }
   }
 }
+

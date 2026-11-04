@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'query_filter.dart';
 
-enum CompareEnum { isEqualTo, isNotEqualTo, arrayContains }
+enum CompareEnum { isEqualTo, isNotEqualTo, arrayContains, isGreaterThanOrEqualTo, isLessThanOrEqualTo, isLessThan, isGreaterThan }
 
 enum LogicalOperator { or, and }
 
