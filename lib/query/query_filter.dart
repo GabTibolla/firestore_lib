@@ -9,7 +9,10 @@ class QueryFilter {
     _collection = FirebaseFirestore.instance.collection(collectionName);
   }
 
-  Future<QuerySnapshot> getQuerySnapshot(SearchCriterio criterio, [GetOptions? source]) async {
+  Future<QuerySnapshot> getQuerySnapshot(
+    SearchCriterio criterio, [
+    GetOptions? source,
+  ]) async {
     Query query = getQueryWhere(criterio);
 
     QuerySnapshot snapshot = await query.get(source);
@@ -81,19 +84,18 @@ class QueryFilter {
 
       case CompareEnum.arrayContains:
         return Filter(item.fieldName, arrayContains: item.value);
-      
-      case CompareEnum.isGreaterThan
+
+      case CompareEnum.isGreaterThan:
         return Filter(item.fieldName, isGreaterThan: item.value);
 
-      case CompareEnum.isLessThan
+      case CompareEnum.isLessThan:
         return Filter(item.fieldName, isLessThan: item.value);
 
-      case CompareEnum.isLessThanOrEqualTo
+      case CompareEnum.isLessThanOrEqualTo:
         return Filter(item.fieldName, isLessThanOrEqualTo: item.value);
 
-      case CompareEnum.isGreaterThanOrEqualTo
+      case CompareEnum.isGreaterThanOrEqualTo:
         return Filter(item.fieldName, isGreaterThanOrEqualTo: item.value);
     }
   }
 }
-
